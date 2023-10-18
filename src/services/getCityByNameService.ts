@@ -21,9 +21,7 @@ export interface CityAPIResponse {
 
 export async function getCityByNameService(name: string): Promise<CityProps[]> {
   try {
-    const { data } = await api.get<CityAPIResponse>(`/weather?q=${name}`);
-    console.log(data.sys.country);
-    
+    const { data } = await api.get<CityAPIResponse>(`/weather?q=${name}`);    
 
     const city = {
       id: data.id,
